@@ -4,7 +4,7 @@ import boto.sts
 
 
 application = flask.Flask(__name__)
-_sts = boto.sts.connect_to_region('us-east-1')
+_sts = boto.sts.connect_to_region('us-east-1', aws_access_key_id='AKIAJ4I5GQLP2LLLPH6Q', aws_secret_access_key='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')
 
 TOKEN_SESSION_DURATION = 129600
 
