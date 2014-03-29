@@ -32,6 +32,7 @@ application.debug=True
 
 @application.route('/')
 def hello_world():
+    print 'where is this logged by default???'
     return "Hello! This is the VTHacks server."
 
 
