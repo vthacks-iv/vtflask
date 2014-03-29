@@ -1,6 +1,10 @@
 import flask
+import boto.sts
+
 
 application = flask.Flask(__name__)
+_sts = boto.sts.connect_to_region('us-east-1')
+sns_policy = '{"Id": "Policy1396058584833","Statement": [{"Sid": "Stmt1396058572300","Action": "sns:*","Effect": "Allow","Resource": "arn:aws:sns:us-east-1:860000342007:VTHacksTopic","Principal": {"AWS": "*"}}]}'
 
 #Set application.debug=true to enable tracebacks on Beanstalk log output.
 #Make sure to remove this line before deploying to production.
@@ -12,12 +16,14 @@ def hello_world():
 
 @application.route('/get_credentials')
 def get_credentials():
-    return 'this should return temporary credentials'
+    response = _sts.get_federation_token(policy=sns_policy)
+    return {'accessKeyID': response.credentials.access_key,
+            'secretAccessKey': response.credentials.secret_key,
+            'securityToken': response.credentials.session_token,
+            'expiration': response.credentials.expiration}
 
-    #response = _sts.get_federation_token(policy=policy)
-    #return {'accessKeyID': response.credentials.access_key,
-            #'secretAccessKey': response.credentials.secret_key,
-            #'securityToken': response.credentials.session_token,
+if __name__ == '__main__':
+    application.run(host='0.0.0.0', debug=True)
             #'expiration': response.credentials.expiration}
 
 if __name__ == '__main__':
