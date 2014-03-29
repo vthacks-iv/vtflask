@@ -6,8 +6,10 @@ import boto.sts
 application = flask.Flask(__name__)
 _sts = boto.sts.connect_to_region('us-east-1')
 
-# Current sns policy that allows a lot of actions (testing purposes right now)
-sns_policy = json.dumps(
+TOKEN_SESSION_DURATION = 129600
+
+# Current sns policy that allows all sns actions (testing purposes right now)
+VT_SNS_POLICY = json.dumps(
 {
   "Id": "Policy1396058584833",
   "Statement": [
@@ -32,13 +34,21 @@ application.debug=True
 def hello_world():
     return "Hello! This is the VTHacks server."
 
-@application.route('/get_credentials')
-def get_credentials():
-    response = _sts.get_federation_token(policy=sns_policy)
-    return {'accessKeyID': response.credentials.access_key,
-            'secretAccessKey': response.credentials.secret_key,
-            'securityToken': response.credentials.session_token,
-            'expiration': response.credentials.expiration}
+
+'''
+Returns temporary security credentials as defined in VT_SNS_POLICY lasting for
+TOKEN_SESSION_DURATION. Token session identified with provided <name> argument.
+'''
+@application.route('/get_credentials/<name>')
+def get_credentials(name):
+    response = _sts.get_federation_token(name, duration=TOKEN_SESSION_DURATION, policy=VT_SNS_POLICY)
+    dict_response = {
+      'accessKeyID': response.credentials.access_key,
+      'secretAccessKey': response.credentials.secret_key,
+      'securityToken': response.credentials.session_token,
+      'expiration': response.credentials.expiration
+    }
+    return dict_response
 
 if __name__ == '__main__':
     application.run(host='0.0.0.0', debug=True)
