@@ -5,13 +5,11 @@ import boto.sts
 
 application = flask.Flask(__name__)
 _sts = boto.sts.connect_to_region('us-east-1', aws_access_key_id='AKIAJ4I5GQLP2LLLPH6Q', aws_secret_access_key='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')
-
 TOKEN_SESSION_DURATION = 129600
 
 # Current sns policy that allows all sns actions (testing purposes right now)
 VT_SNS_POLICY = json.dumps(
 {
-  "Id": "Policy1396058584833",
   "Statement": [
       {
             "Sid": "Stmt1396058572300",
