@@ -19,9 +19,9 @@ VT_SNS_POLICY = json.dumps(
   "Statement": [
       {
             "Sid": "Stmt1396058572300",
-            "Action": "sns:*",
+            "Action": "*",
             "Effect": "Allow",
-            "Resource": "arn:aws:sns:us-east-1:860000342007:VTHacksTopic"
+            "Resource": "*"
       }
     ]
 })
