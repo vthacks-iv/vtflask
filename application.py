@@ -2,15 +2,18 @@ import flask
 import json
 import boto.sts
 import os
-import sys
-from flask import request, Response
-
+from flask import Response
 
 application = flask.Flask(__name__)
-_sts = boto.sts.connect_to_region('us-east-1', aws_access_key_id='AKIAJ4I5GQLP2LLLPH6Q', aws_secret_access_key='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')
+application.debug=True
+
+# connect using the IAM user credentials (required)
+_sts = boto.sts.connect_to_region('us-east-1', aws_access_key_id=os.environ.get('AWS_ACCESS_KEY_ID'), aws_secret_access_key=os.environ.get('AWS_SECRET_KEY'))
+
+# temporary security credentials will lasts for 36 hours (3 days)
 TOKEN_SESSION_DURATION = 129600
 
-# Current sns policy that allows all sns actions (testing purposes right now)
+# current sns policy that allows all sns actions (testing purposes right now)
 VT_SNS_POLICY = json.dumps(
 {
   "Statement": [
@@ -21,22 +24,12 @@ VT_SNS_POLICY = json.dumps(
             "Resource": "arn:aws:sns:us-east-1:860000342007:VTHacksTopic"
       }
     ]
-}
-)
+})
 
-#Set application.debug=true to enable tracebacks on Beanstalk log output.
-#Make sure to remove this line before deploying to production.
-application.debug=True
 
 @application.route('/')
 def hello_world():
     return "Hello! This is the VTHacks server."
-
-
-@application.route('/test')
-def test():
-    return str(os.environ)
-
 
 '''
 Returns temporary security credentials as defined in VT_SNS_POLICY lasting for
@@ -55,3 +48,4 @@ def get_credentials(name):
 
 if __name__ == '__main__':
     application.run(host='0.0.0.0', debug=True)
+
