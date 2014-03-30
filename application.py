@@ -18,10 +18,10 @@ VT_SNS_POLICY = json.dumps(
 {
   "Statement": [
       {
-            "Sid": "AllAccessOnTopicAndApp",
+            "Sid": "AllAccess",
             "Action": "*",
             "Effect": "Allow",
-            "Resource": ["arn:aws:sns:us-east-1:860000342007:VTHacksTopic","arn:aws:sns:us-east-1:860000342007:app/APNS_SANDBOX/VTHacks"]
+            "Resource":"*"
       }
     ]
 })
