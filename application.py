@@ -19,7 +19,7 @@ VT_SNS_POLICY = json.dumps(
   "Statement": [
       {
             "Sid": "Stmt1396058572300",
-            "Action": "*",
+            "Action": "sns:*",
             "Effect": "Allow",
             "Resource": "*"
       }
