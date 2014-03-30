@@ -22,12 +22,6 @@ VT_SNS_POLICY = json.dumps(
             "Action": "sns:*",
             "Effect": "Allow",
             "Resource": "arn:aws:sns:us-east-1:860000342007:VTHacksTopic"
-      },
-      {
-            "Sid": "Stmt1396171321265",
-            "Action": "sqs:*",
-            "Effect": "Allow",
-            "Resource": "arn:aws:sqs:us-east-1:860000342007:VTHacksQueue"
       }
     ]
 })
