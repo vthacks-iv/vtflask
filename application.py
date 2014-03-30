@@ -1,6 +1,9 @@
 import flask
 import json
 import boto.sts
+import os
+import sys
+from flask import request, Response
 
 
 application = flask.Flask(__name__)
@@ -30,6 +33,11 @@ def hello_world():
     return "Hello! This is the VTHacks server."
 
 
+@application.route('/test')
+def test():
+    return str(os.environ)
+
+
 '''
 Returns temporary security credentials as defined in VT_SNS_POLICY lasting for
 TOKEN_SESSION_DURATION. Token session identified with provided <name> argument.
@@ -43,7 +51,7 @@ def get_credentials(name):
       'securityToken': response.credentials.session_token,
       'expiration': response.credentials.expiration
     }
-    return flask.jsonify(**dict_response)
+    return Response(json.dumps(dict_response), status=201, mimetype='application/json')
 
 if __name__ == '__main__':
     application.run(host='0.0.0.0', debug=True)
