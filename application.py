@@ -15,8 +15,8 @@ VT_SNS_POLICY = json.dumps(
             "Sid": "Stmt1396058572300",
             "Action": "sns:*",
             "Effect": "Allow",
-            "Resource": "arn:aws:sns:us-east-1:860000342007:VTHacksTopic",
-          }
+            "Resource": "arn:aws:sns:us-east-1:860000342007:VTHacksTopic"
+      }
     ]
 }
 )
@@ -43,7 +43,7 @@ def get_credentials(name):
       'securityToken': response.credentials.session_token,
       'expiration': response.credentials.expiration
     }
-    return dict_response
+    return flask.jsonify(**dict_response)
 
 if __name__ == '__main__':
     application.run(host='0.0.0.0', debug=True)
