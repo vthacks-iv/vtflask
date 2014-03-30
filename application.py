@@ -18,10 +18,15 @@ VT_SNS_POLICY = json.dumps(
 {
   "Statement": [
       {
-            "Sid": "TypicalMobileReceiver",
-            "Action":["sns:CreatePlatformApplication","sns:CreatePlatformEndpoint", "sns:Receive","sns:SetEndpointAttributes", "sns:SetPlatformApplicationAttributes", "sns:Subscribe"],
+            "Sid": "Stmt1396058572300",
+            "Action": "sns:*",
             "Effect": "Allow",
-            "Resource": "*"
+            "Resource": "arn:aws:sns:us-east-1:860000342007:VTHacksTopic"
+      },
+      {
+            "Action": "sns:CreatePlatformEndpoint",
+            "Effect": "Allow",
+            "Resource": "arn:aws:sns:us-east-1:860000342007:app/APNS_SANDBOX/VTHacks"
       }
     ]
 })
