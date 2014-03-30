@@ -19,15 +19,9 @@ VT_SNS_POLICY = json.dumps(
   "Statement": [
       {
             "Sid": "Stmt1396058572300",
-            "Action": "sns:*",
+            "NotAction":"sns:Publish",
             "Effect": "Allow",
             "Resource": "*"
-      },
-      {
-            "Sid": "allowEndpointCreation",
-            "Action": "sns:CreatePlatformEndpoint",
-            "Effect":"Allow",
-            "Resource:":"arn:aws:sns:us-east-1:860000342007:app/APNS_SANDBOX/VTHacks"
       }
     ]
 })
