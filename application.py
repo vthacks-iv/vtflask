@@ -16,9 +16,6 @@ VT_SNS_POLICY = json.dumps(
             "Action": "sns:*",
             "Effect": "Allow",
             "Resource": "arn:aws:sns:us-east-1:860000342007:VTHacksTopic",
-            "Principal": {
-                    "AWS": "*"
-                  }
           }
     ]
 }
