@@ -18,8 +18,8 @@ VT_SNS_POLICY = json.dumps(
 {
   "Statement": [
       {
-            "Sid": "Stmt1396058572300",
-            "NotAction":"sns:Publish",
+            "Sid": "TypicalMobileReceiver",
+            "Action":["sns:CreatePlatformApplication","sns:CreatePlatformEndpoint", "sns:Receive","sns:SetEndpointAttributes", "sns:SetPlatformApplicationAttributes", "sns:Subscribe"],
             "Effect": "Allow",
             "Resource": "*"
       }
