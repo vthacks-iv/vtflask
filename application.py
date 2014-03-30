@@ -37,8 +37,8 @@ TOKEN_SESSION_DURATION. Token session identified with provided <name> argument.
 '''
 @application.route('/get_credentials/<name>')
 def get_credentials(name):
-    if (not name)
-      return 'Error: Please provide a valid name identifier'
+    if (not name):
+        return 'Error: Please provide a valid name identifier'
     response = _sts.get_federation_token(name, duration=TOKEN_SESSION_DURATION, policy=VT_SNS_POLICY)
     dict_response = {
       'accessKeyID': response.credentials.access_key,
