@@ -22,6 +22,12 @@ VT_SNS_POLICY = json.dumps(
             "Action": "sns:*",
             "Effect": "Allow",
             "Resource": "arn:aws:sns:us-east-1:860000342007:VTHacksTopic"
+      },
+      {
+            "Sid": "Stmt1396171321265",
+            "Action": "sqs:*",
+            "Effect": "Allow",
+            "Resource": "arn:aws:sqs:us-east-1:860000342007:VTHacksQueue"
       }
     ]
 })
@@ -37,8 +43,10 @@ TOKEN_SESSION_DURATION. Token session identified with provided <name> argument.
 '''
 @application.route('/get_credentials/<name>')
 def get_credentials(name):
-    if (not name):
+    if name.isspace():
         return 'Error: Please provide a valid name identifier'
+
+    # TODO: Append random hash to name identifier to try to maintain uniqueness
     response = _sts.get_federation_token(name, duration=TOKEN_SESSION_DURATION, policy=VT_SNS_POLICY)
     dict_response = {
       'accessKeyID': response.credentials.access_key,
