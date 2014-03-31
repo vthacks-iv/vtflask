@@ -2,7 +2,7 @@ import flask
 import json
 import boto.sts
 import os
-from flask import Response
+from flask import jsonify, Response
 
 application = flask.Flask(__name__)
 application.debug=True
@@ -48,7 +48,25 @@ def get_credentials(name):
       'securityToken': response.credentials.session_token,
       'expiration': response.credentials.expiration
     }
-    return Response(json.dumps(dict_response), status=201, mimetype='application/json')
+    return jsonify(**dict_response)
+
+@aplication.route('/get_schedule')
+def get_schedule():
+  with open('schedule.json') as json_file:
+    json_data = json.load(json_file)
+    return jsonify(**json_data)
+
+@aplication.route('/get_awards')
+def get_awards():
+  with open('awards.json') as json_file:
+    json_data = json.load(json_file)
+    return jsonify(**json_data)
+
+@aplication.route('/get_contacts')
+def get_contacts():
+  with open('get_contacts.json') as json_file:
+    json_data = json.load(json_file)
+    return jsonify(**json_data)
 
 if __name__ == '__main__':
     application.run(host='0.0.0.0', debug=True)
