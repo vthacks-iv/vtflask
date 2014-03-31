@@ -2,6 +2,9 @@ import flask
 import json
 import boto.sts
 import os
+import string
+import random
+
 from flask import jsonify, Response
 
 application = flask.Flask(__name__)
@@ -35,12 +38,9 @@ def hello_world():
 Returns temporary security credentials as defined in VT_SNS_POLICY lasting for
 TOKEN_SESSION_DURATION. Token session identified with provided <name> argument.
 '''
-@application.route('/get_credentials/<name>')
-def get_credentials(name):
-    if name.isspace():
-        return 'Error: Please provide a valid name identifier'
-
-    # TODO: Append random hash to name identifier to try to maintain uniqueness
+@application.route('/get_credentials')
+def get_credentials():
+    name = produce_random_str()
     response = _sts.get_federation_token(name, duration=TOKEN_SESSION_DURATION, policy=VT_SNS_POLICY)
     dict_response = {
       'accessKeyID': response.credentials.access_key,
@@ -67,6 +67,10 @@ def get_contacts():
   with open('contacts.json') as json_file:
     json_data = json.load(json_file)
     return jsonify(**json_data)
+
+# used to produce random name identifier needed in token request
+def produce_random_str():
+  return ''.join(random.choice(string.ascii_uppercase) for i in range(12))
 
 if __name__ == '__main__':
     application.run(host='0.0.0.0', debug=True)
