@@ -64,7 +64,7 @@ def get_awards():
 
 @application.route('/get_contacts')
 def get_contacts():
-  with open('get_contacts.json') as json_file:
+  with open('contacts.json') as json_file:
     json_data = json.load(json_file)
     return jsonify(**json_data)
 
