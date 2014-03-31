@@ -50,19 +50,19 @@ def get_credentials(name):
     }
     return jsonify(**dict_response)
 
-@aplication.route('/get_schedule')
+@application.route('/get_schedule')
 def get_schedule():
   with open('schedule.json') as json_file:
     json_data = json.load(json_file)
     return jsonify(**json_data)
 
-@aplication.route('/get_awards')
+@application.route('/get_awards')
 def get_awards():
   with open('awards.json') as json_file:
     json_data = json.load(json_file)
     return jsonify(**json_data)
 
-@aplication.route('/get_contacts')
+@application.route('/get_contacts')
 def get_contacts():
   with open('get_contacts.json') as json_file:
     json_data = json.load(json_file)
