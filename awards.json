@@ -4,24 +4,28 @@
       "title" : "Award1",
       "description" : "Description1",
       "prize" : "Prize1",
+      "company" : "Twilio",
       "url" : "Url1"
     },
     {
       "title" : "Award2",
       "description" : "Description2",
       "prize" : "Prize2",
+      "company" : "Sendgrid",
       "url" : "Url2"
     },
     {
       "title" : "Award3",
       "description" : "Description3",
       "prize" : "Prize3",
+      "company" : "Techpad",
       "url" : "Url3"
     },
     {
       "title" : "Award4",
       "description" : "Description4",
       "prize" : "Prize3",
+      "company" : "Rackspace",
       "url" : "Url4"
     }
   ]
