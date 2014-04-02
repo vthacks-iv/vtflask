@@ -1,6 +1,4 @@
 {
-  "items" : 
-    {
     "Friday" :[
     {
       "title" : "First Event",
@@ -64,5 +62,4 @@
       "description" : "Description4",
       "timestamp" : "5:30pm"
     }]
-  }
 }
