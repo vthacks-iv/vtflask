@@ -3,63 +3,63 @@
     {
       "title" : "First Event",
       "description" : "Description1",
-      "timestamp" : "April 18, 2014 03:30pm"
+      "timestamp" : "3:30pm"
     },
     {
       "title" : "Second Event",
       "description" : "Description2",
-      "timestamp" : "April 18, 2014 3:45pm"
+      "timestamp" : "3:45pm"
     },
     {
       "title" : "Third Event",
       "description" : "Description3",
-      "timestamp" : "April 18, 2014 4:15pm"
+      "timestamp" : "4:15pm"
     },
     {
       "title" : "Fourth Event",
       "description" : "Description4",
-      "timestamp" : "April 18, 2014 5:30pm"
+      "timestamp" : "5:30pm"
     }],
     "Saturday" :[
     {
       "title" : "First Event",
       "description" : "Description1",
-      "timestamp" : "April 19, 2014 3:30pm"
+      "timestamp" : "3:30pm"
     },
     {
       "title" : "Second Event",
       "description" : "Description2",
-      "timestamp" : "April 19, 2014 3:45pm"
+      "timestamp" : "3:45pm"
     },
     {
       "title" : "Third Event",
       "description" : "Description3",
-      "timestamp" : "April 19, 2014 4:15pm"
+      "timestamp" : "4:15pm"
     },
     {
       "title" : "Fourth Event",
       "description" : "Description4",
-      "timestamp" : "April 19, 2014 5:30pm"
+      "timestamp" : "5:30pm"
     }],
     "Sunday" :[
     {
       "title" : "First Event",
       "description" : "Description1",
-      "timestamp" : "April 20, 2014 3:30pm" 
+      "timestamp" : "3:30pm" 
     },
     {
       "title" : "Second Event",
       "description" : "Description2",
-      "timestamp" : "April 20, 2014 3:45pm"
+      "timestamp" : "3:45pm"
     },
     {
       "title" : "Third Event",
       "description" : "Description3",
-      "timestamp" : "April 20, 2014 4:15pm"
+      "timestamp" : "4:15pm"
     },
     {
       "title" : "Fourth Event",
       "description" : "Description4",
-      "timestamp" : "April 20, 2014 5:30pm"
+      "timestamp" : "5:30pm"
     }]
 }
