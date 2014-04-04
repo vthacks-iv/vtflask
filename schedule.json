@@ -1,25 +1,56 @@
 {
     "Friday" :[
     {
-      "title" : "First Event",
-      "description" : "Description1",
-      "timestamp" : "3:30pm"
+      "title" : "Setup begins",
+      "description" : "VTHacks staff will begin setting up everything inside the venue. Please come check-in first and come help us out if you're free!",
+      "timestamp" : "8:00am"
     },
     {
-      "title" : "Second Event",
-      "description" : "Description2",
-      "timestamp" : "3:45pm"
+      "title" : "Volunteer Check-in Opens",
+      "description" : "If you're a volunteer, please come to the main entrace of Cassell Coliseum to check-in. Check-in is open throughout the event.",
+      "timestamp" : "12:00pm"
     },
     {
-      "title" : "Third Event",
-      "description" : "Description3",
-      "timestamp" : "4:15pm"
+      "title" : "Sponsor Check-in Opens",
+      "description" : "Sponsors can begin check-in at the main entrance of Cassel Coliseum.",
+      "timestamp" : "3:00pm"
     },
     {
-      "title" : "Fourth Event",
-      "description" : "Description4",
-      "timestamp" : "5:30pm"
-    }],
+      "title" : "General Check-in Opens",
+      "description" : "Everyone can begin check-in at the main entrance of Cassel Coliseum.",
+      "timestamp" : "4:00pm"
+    },
+    {
+      "title" : "Dinner!",
+      "description" : "We will begin serving dinner now.",
+      "timestamp" : "6:00pm"
+    },
+    {
+      "title" : "General Check-in Opens",
+      "description" : "Everyone can begin check-in at the main entrance of Cassel Coliseum.",
+      "timestamp" : "4:00pm"
+    },
+    {
+      "title" : "General Check-in Opens",
+      "description" : "Everyone can begin check-in at the main entrance of Cassel Coliseum.",
+      "timestamp" : "4:00pm"
+    },
+    {
+      "title" : "General Check-in Opens",
+      "description" : "Everyone can begin check-in at the main entrance of Cassel Coliseum.",
+      "timestamp" : "4:00pm"
+    },
+    {
+      "title" : "General Check-in Opens",
+      "description" : "Everyone can begin check-in at the main entrance of Cassel Coliseum.",
+      "timestamp" : "4:00pm"
+    },
+    {
+      "title" : "General Check-in Opens",
+      "description" : "Everyone can begin check-in at the main entrance of Cassel Coliseum.",
+      "timestamp" : "4:00pm"
+    }
+    ],
     "Saturday" :[
     {
       "title" : "First Event",

@@ -1,0 +1,15 @@
+{
+  "items" : [
+    {
+      "title" : "Welcome",
+      "description" : "Welcome to VTHacks. First order of business: go through check-in at the entrace of Cassell Coliseum.",
+      "timestamp" : "April 18, 8:00am"
+    },
+    {
+      "title" : "Personal Belongings",
+      "description" : "Bring everything that you have on the bus with you. You can place it wherever you decide to set-up for hacking.",
+      "timestamp" : "April 18, 7:30am"
+    }
+  ]
+}
+

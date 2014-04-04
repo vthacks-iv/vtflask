@@ -30,6 +30,12 @@ VT_SNS_POLICY = json.dumps(
 })
 
 
+@application.route('/get_welcome')
+def get_welcome():
+  with open('welcome.json') as json_file:
+    json_data = json.load(json_file)
+    return jsonify(**json_data)
+
 @application.route('/')
 def hello_world():
     return "Hello! This is the VTHacks server."
