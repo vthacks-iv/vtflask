@@ -6,6 +6,7 @@ import string
 import random
 
 from flask import jsonify, Response
+from flask import send_file
 
 application = flask.Flask(__name__)
 application.debug=True
@@ -15,6 +16,7 @@ _sts = boto.sts.connect_to_region('us-east-1', aws_access_key_id=os.environ.get(
 
 # temporary security credentials will lasts for 36 hours (3 days)
 TOKEN_SESSION_DURATION = 129600
+MAP_IMAGE_FILE = 'vthacks_map.png'
 
 # current sns policy that allows all sns actions (testing purposes right now)
 VT_SNS_POLICY = json.dumps(
@@ -30,11 +32,6 @@ VT_SNS_POLICY = json.dumps(
 })
 
 
-@application.route('/get_welcome')
-def get_welcome():
-  with open('welcome.json') as json_file:
-    json_data = json.load(json_file)
-    return jsonify(**json_data)
 
 @application.route('/')
 def hello_world():
@@ -55,6 +52,16 @@ def get_credentials():
       'expiration': response.credentials.expiration
     }
     return jsonify(**dict_response)
+
+@application.route('/get_map')
+def get_map():
+    return send_file(MAP_IMAGE_FILE, mimetype='image/png')
+
+@application.route('/get_welcome')
+def get_welcome():
+  with open('welcome.json') as json_file:
+    json_data = json.load(json_file)
+    return jsonify(**json_data)
 
 @application.route('/get_schedule')
 def get_schedule():
