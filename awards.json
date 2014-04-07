@@ -1,31 +1,31 @@
 {
   "awards" : [
     {
-      "title" : "Award1",
-      "description" : "Sponsors can begin check-in at the main entrance of Cassel Coliseum. Hey this is long text can you see this vincent. hey this is long text can you see this vincent. hey this is long text can you see this vincent. hey this is really freaking long you have to expand it probably. please expand me lol.",
-      "prize" : "Prize1",
-      "company" : "Twilio",
+      "title" : "Greatest Hack",
+      "description" : "This award will go out to the best overall hack of the hackathon. Good luck guys!",
+      "prize" : "$1000",
+      "company" : "Techpad",
       "url" : "Url1"
     },
     {
-      "title" : "Award2",
-      "description" : "Description2",
-      "prize" : "Prize2",
+      "title" : "Best Sendgrid API Hack",
+      "description" : "This award goes out to the group that has the best use of the Sendgrid API. Talk to Nick for help!",
+      "prize" : "$100 Sendgrid credit!",
       "company" : "Sendgrid",
       "url" : "Url2"
     },
     {
-      "title" : "Award3",
+      "title" : "Best Rackspace Hack",
       "description" : "Sponsors can begin check-in at the main entrance of Cassel Coliseum. Hey this is long text can you see this vincent. hey this is long text can you see this vincent. hey this is long text can you see this vincent. hey this is really freaking long you have to expand it probably. please expand me lol.",
-      "prize" : "Prize3",
-      "company" : "Techpad",
+      "prize" : "$250 Credit",
+      "company" : "Rackspace",
       "url" : "Url3"
     },
     {
-      "title" : "Award4",
-      "description" : "Description4",
+      "title" : "Best Hardware Hack",
+      "description" : "This goes out to the best hardware hack at VTHacks. Come get help from Intel engineers in case you need help with your electronics!",
       "prize" : "Prize3",
-      "company" : "Rackspace",
+      "company" : "Intel",
       "url" : "Url4"
     }
   ]
