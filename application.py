@@ -11,6 +11,10 @@ from flask import send_file
 application = flask.Flask(__name__)
 application.debug=True
 
+
+
+IOS_PLATFORM_ARN = "arn:aws:sns:us-east-1:860000342007:app/APNS_SANDBOX/VTHacks"
+
 # connect using the IAM user credentials (required)
 _sts = boto.sts.connect_to_region('us-east-1', aws_access_key_id=os.environ.get('AWS_ACCESS_KEY_ID'), aws_secret_access_key=os.environ.get('AWS_SECRET_KEY'))
 
@@ -49,7 +53,8 @@ def get_credentials():
       'accessKeyID': response.credentials.access_key,
       'secretAccessKey': response.credentials.secret_key,
       'securityToken': response.credentials.session_token,
-      'expiration': response.credentials.expiration
+      'expiration': response.credentials.expiration,
+      'iosPlatformARN': IOS_PLATFORM_ARN
     }
     return jsonify(**dict_response)
 
