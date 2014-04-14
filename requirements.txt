@@ -1,2 +1,4 @@
 Flask==0.9
 boto==2.14.0
+Flask-PyMongo==0.2.1
+Flask-Bcrypt==0.5.2

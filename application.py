@@ -5,7 +5,11 @@ import os
 import string
 import random
 
-from flask import jsonify, Response
+from flask import jsonify, Response, request
+from flask.ext.pymongo import PyMongo
+from bson import json_util
+from bson.objectid import ObjectId
+from flask.ext.bcrypt import Bcrypt
 
 application = flask.Flask(__name__)
 application.debug=True
@@ -29,6 +33,10 @@ VT_SNS_POLICY = json.dumps(
     ]
 })
 
+# Get MongoDB client
+mongo = PyMongo(application)
+# Get Bcrypt client
+bcrypt = Bcrypt(application)
 
 @application.route('/get_welcome')
 def get_welcome():
@@ -73,6 +81,67 @@ def get_contacts():
   with open('contacts.json') as json_file:
     json_data = json.load(json_file)
     return jsonify(**json_data)
+
+@application.route('/groups', methods=['GET'])
+def get_groups():
+  # return all groups with no password field
+  result = mongo.db.groups.find({}, {'password': False})
+  return str(json.dumps({'groups':list(result)}, default=json_util.default)), 200
+
+@application.route('/groups', methods=['POST'])
+def post_group():
+  # password, members, email, twitter, phone, ideas
+  password = request.form.get('password')
+  members = request.form.get('members')
+  email = request.form.get('email')
+  twitter = request.form.get('twitter')
+  phone = request.form.get('phone')
+  ideas = request.form.get('ideas')
+
+  # make sure at least one contact method exists
+  if (not password
+      or not members
+      or (not email and not twitter and not phone)
+      or not ideas):
+        return 'required elements not present', 400
+
+  group = {'password': bcrypt.generate_password_hash(password),
+           'members': members,
+           'ideas': ideas}
+  if email:
+    group.update({'email': email})
+  if twitter:
+    group.update({'twitter': twitter})
+  if phone:
+    group.update({'phone': phone})
+
+  mongo.db.groups.insert(group)
+
+  return 'success', 200
+
+@application.route('/groups', methods=['DELETE'])
+def delete_group():
+  # need groupID and matching password
+  request_password = request.form.get('password')
+  groupID = request.form.get('groupID')
+
+  if not request_password or not groupID:
+    return 'required elements not present', 400
+
+  group = mongo.db.groups.find_one({'_id': ObjectId(groupID)})
+  if not group:
+    return 'group not found', 404
+
+  db_password = group.get('password')
+  if not db_password:
+    return 'password not in db', 500
+
+  if not bcrypt.check_password_hash(db_password, request_password):
+    return 'invalid password', 401
+
+  mongo.db.groups.remove({'_id': ObjectId(groupID)})
+
+  return 'success', 200
 
 # used to produce random name identifier needed in token request
 def produce_random_str():
