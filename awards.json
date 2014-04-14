@@ -2,9 +2,9 @@
   "awards" : [
     {
       "title" : "NOTICE",
-      "description" : "Apple is not a sponsor nor is involved in any way with this event (or any related contests presented here or during the event). All contests and related prizes presented in this app are sponsored by VTHacks. The official rule to participate in any of these event contests presented here is only that you must be a registered VTHacks participant.",
-      "prize" : "$100",
-      "company" : "VTHacks",
+      "description" : "Apple is not a sponsor nor is involved in any way with this event (or any related contests presented here or during the event). All contests and prizes presented in this app are sponsored by VTHacks. The only official rule for these contests is to be a registered VTHacks participant.",
+      "prize" : "Please read:",
+      "company" : "",
       "url" : ""
     },
     {
