@@ -10,15 +10,21 @@ from flask.ext.pymongo import PyMongo
 from bson import json_util
 from bson.objectid import ObjectId
 from flask.ext.bcrypt import Bcrypt
+from flask import send_file
 
 application = flask.Flask(__name__)
 application.debug=True
+
+
+
+IOS_PLATFORM_ARN = "arn:aws:sns:us-east-1:860000342007:app/APNS_SANDBOX/VTHacks"
 
 # connect using the IAM user credentials (required)
 _sts = boto.sts.connect_to_region('us-east-1', aws_access_key_id=os.environ.get('AWS_ACCESS_KEY_ID'), aws_secret_access_key=os.environ.get('AWS_SECRET_KEY'))
 
 # temporary security credentials will lasts for 36 hours (3 days)
 TOKEN_SESSION_DURATION = 129600
+MAP_IMAGE_FILE = 'vthacks_map.png'
 
 # current sns policy that allows all sns actions (testing purposes right now)
 VT_SNS_POLICY = json.dumps(
@@ -38,11 +44,6 @@ mongo = PyMongo(application)
 # Get Bcrypt client
 bcrypt = Bcrypt(application)
 
-@application.route('/get_welcome')
-def get_welcome():
-  with open('welcome.json') as json_file:
-    json_data = json.load(json_file)
-    return jsonify(**json_data)
 
 @application.route('/')
 def hello_world():
@@ -60,9 +61,20 @@ def get_credentials():
       'accessKeyID': response.credentials.access_key,
       'secretAccessKey': response.credentials.secret_key,
       'securityToken': response.credentials.session_token,
-      'expiration': response.credentials.expiration
+      'expiration': response.credentials.expiration,
+      'iosPlatformARN': IOS_PLATFORM_ARN
     }
     return jsonify(**dict_response)
+
+@application.route('/get_map')
+def get_map():
+    return send_file(MAP_IMAGE_FILE, mimetype='image/png')
+
+@application.route('/get_welcome')
+def get_welcome():
+  with open('welcome.json') as json_file:
+    json_data = json.load(json_file)
+    return jsonify(**json_data)
 
 @application.route('/get_schedule')
 def get_schedule():
