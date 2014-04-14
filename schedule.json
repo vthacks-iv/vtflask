@@ -6,91 +6,91 @@
       "timestamp" : "8:00am"
     },
     {
-      "title" : "Volunteer Check-in Opens",
-      "description" : "If you're a volunteer, please come to the main entrace of Cassell Coliseum to check-in. Check-in is open throughout the event.",
+      "title" : "Volunteer Check-in",
+      "description" : "If you're a volunteer, please check in at the main entrace of Cassell Coliseum.",
       "timestamp" : "12:00pm"
     },
     {
-      "title" : "Another Check in",
-      "description" : "Sponsors can begin check-in at the main entrance of Cassel Coliseum. Hey this is long text can you see this vincent. hey this is long text can you see this vincent. hey this is long text can you see this vincent. hey this is really freaking long you have to expand it probably. please expand me lol.",
+      "title" : "Sponsor Check in",
+      "description" : "If you're a sponsor, you can check-in at the main entrance of Cassel Coliseum. Sponsors can now also set up tables.",
       "timestamp" : "3:00pm"
     },
     {
-      "title" : "Another Event Happening",
-      "description" : "Everyone can begin check-in at the main entrance of Cassel Coliseum.",
+      "title" : "General Check-in",
+      "description" : "Everyone can now check-in at the main entrance of Cassel Coliseum.",
       "timestamp" : "4:00pm"
     },
     {
-      "title" : "Happy Event",
-      "description" : "We will begin serving dinner now.",
+      "title" : "Dinner",
+      "description" : "We will now begin serving dinner!",
       "timestamp" : "6:00pm"
     },
     {
-      "title" : "General",
-      "description" : "Everyone can begin check-in at the main entrance of Cassel Coliseum.",
-      "timestamp" : "4:00pm"
+      "title" : "Opening Ceremony",
+      "description" : "The opening ceremony will now begin. Head over to the stands.",
+      "timestamp" : "7:00pm"
     },
     {
-      "title" : "General Check-in Opens",
-      "description" : "Everyone can begin check-in at the main entrance of Cassel Coliseum.",
-      "timestamp" : "4:00pm"
+      "title" : "Hacking Starts",
+      "description" : "You can now officially start to work on your projects. Best of luck!",
+      "timestamp" : "9:00pm"
     },
     {
-      "title" : "General Check-in Opens",
-      "description" : "Sponsors can begin check-in at the main entrance of Cassel Coliseum. Hey this is long text can you see this vincent. hey this is long text can you see this vincent. hey this is long text can you see this vincent. hey this is really freaking long you have to expand it probably. please expand me lol.",
-      "timestamp" : "4:00pm"
+      "title" : "CapTech Tech Talk",
+      "description" : "The Tech Talk by CapTech will now begin. It will last approximately 30 minutes.",
+      "timestamp" : "9:30pm"
     },
     {
-      "title" : "General Check-in Opens",
-      "description" : "Everyone can begin check-in at the main entrance of Cassel Coliseum.",
-      "timestamp" : "4:00pm"
-    },
-    {
-      "title" : "General Check-in Opens",
-      "description" : "Everyone can begin check-in at the main entrance of Cassel Coliseum.",
+      "title" : "TechPad Tech Talk",
+      "description" : "The Tech Talk by Tech Pad will now begin. It will last approximately 1 hour.",
       "timestamp" : "4:00pm"
     }
     ],
     "Saturday" :[
     {
-      "title" : "First Event",
-      "description" : "Sponsors can begin check-in at the main entrance of Cassel Coliseum. Hey this is long text can you see this vincent. hey this is long text can you see this vincent. hey this is long text can you see this vincent. hey this is really freaking long you have to expand it probably. please expand me lol.",
-      "timestamp" : "3:30pm"
+      "title" : "Midnight Snack",
+      "description" : "Campus Cookies will be providing us with a delicious midnight snack.",
+      "timestamp" : "12:00am"
     },
     {
-      "title" : "Second Event",
-      "description" : "Description2",
-      "timestamp" : "3:45pm"
+      "title" : "Breakfast",
+      "description" : "Breakfast provided by Carol Lee Doughnuts + Starbucks - Get ready to try the best doughnuts on campus.",
+      "timestamp" : "7:00am"
     },
     {
-      "title" : "Third Event",
-      "description" : "Description3",
-      "timestamp" : "4:15pm"
+      "title" : "Lunch",
+      "description" : "Lunch will be provided by Chinese Kitchen.",
+      "timestamp" : "1:00pm"
     },
     {
-      "title" : "Fourth Event",
-      "description" : "Sponsors can begin check-in at the main entrance of Cassel Coliseum. Hey this is long text can you see this vincent. hey this is long text can you see this vincent. hey this is long text can you see this vincent. hey this is really freaking long you have to expand it probably. please expand me lol.",
-      "timestamp" : "5:30pm"
+      "title" : "Dinner",
+      "description" : "Dinner will be provided by Bennys.",
+      "timestamp" : "6:00pm"
     }],
     "Sunday" :[
     {
-      "title" : "First Event",
-      "description" : "Description1",
-      "timestamp" : "3:30pm" 
+      "title" : "Midnight Snack",
+      "description" : "Get ready for a delicious snack provided by our friends at Frosty Parrot!",
+      "timestamp" : "12:00am"
     },
     {
-      "title" : "Second Event",
-      "description" : "Description2",
-      "timestamp" : "3:45pm"
+      "title" : "Coffee",
+      "description" : "Starbucks coffee to wrap up the last lap of the hackathon!",
+      "timestamp" : "7:00am"
     },
     {
-      "title" : "Third Event",
-      "description" : "Description3",
-      "timestamp" : "4:15pm"
+      "title" : "Expo",
+      "description" : "We will now begin our Expo in the Bowl. Prepare to show off your hacks!",
+      "timestamp" : "10:00am"
     },
     {
-      "title" : "Fourth Event",
-      "description" : "Description4",
-      "timestamp" : "5:30pm"
+      "title" : "Lunch",
+      "description" : "Lunch will be provided by Next Door Bake Shop.",
+      "timestamp" : "12:00pm"
+    },
+    {
+      "title" : "Closing Ceremony",
+      "description" : "Head over to the Bowl for our Closing Ceremony.",
+      "timestamp" : "12:30pm"
     }]
 }
