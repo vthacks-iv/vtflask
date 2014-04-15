@@ -94,6 +94,12 @@ def get_contacts():
     json_data = json.load(json_file)
     return jsonify(**json_data)
 
+@application.route('/get_map_markers')
+def get_contacts():
+  with open('map_markers.json') as json_file:
+    json_data = json.load(json_file)
+    return jsonify(**json_data)
+
 @application.route('/groups', methods=['GET'])
 def get_groups():
   # return all groups with no password field
