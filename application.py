@@ -95,7 +95,7 @@ def get_contacts():
     return jsonify(**json_data)
 
 @application.route('/get_map_markers')
-def get_contacts():
+def get_map_markers():
   with open('map_markers.json') as json_file:
     json_data = json.load(json_file)
     return jsonify(**json_data)
