@@ -5,8 +5,8 @@ import boto.sns
 import os
 import string
 import random
+import time
 
-from datetime import datetime
 from flask import jsonify, Response, request
 from flask.ext.pymongo import PyMongo
 from bson import json_util
@@ -115,14 +115,13 @@ def post_announcement():
   if not title or not message:
     return 'required elements not present', 400
 
-  timestamp = datetime.now().strftime("%a %h %d %H:%M:%S")
+  timestamp = time.time()
 
   announcement = {'Subject': title, 'Message': message, 'Timestamp': timestamp}
   mongo.db.announcements.insert(announcement)
 
   json_string = json.dumps({'GCM': json.dumps({'data': {'title': title, 'message': message, 'timestamp': timestamp}}, ensure_ascii=False), 'APNS': json.dumps({'aps': {'alert': title + '|' + message}}, ensure_ascii=False), 'sqs': title + '|' + message, 'default': title + '|' + message}, ensure_ascii=False)
-  print json_string
-  print type(json_string)
+
   _sns.publish(target_arn='arn:aws:sns:us-east-1:860000342007:VTHacksTopic',
       message=json_string,
       subject=title,
