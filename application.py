@@ -1,10 +1,12 @@
 import flask
 import json
 import boto.sts
+import boto.sns
 import os
 import string
 import random
 
+from datetime import datetime
 from flask import jsonify, Response, request
 from flask.ext.pymongo import PyMongo
 from bson import json_util
@@ -21,6 +23,7 @@ IOS_PLATFORM_ARN = "arn:aws:sns:us-east-1:860000342007:app/APNS_SANDBOX/VTHacks"
 
 # connect using the IAM user credentials (required)
 _sts = boto.sts.connect_to_region('us-east-1', aws_access_key_id=os.environ.get('AWS_ACCESS_KEY_ID'), aws_secret_access_key=os.environ.get('AWS_SECRET_KEY'))
+_sns = boto.sns.connect_to_region('us-east-1', aws_access_key_id=os.environ.get('AWS_ACCESS_KEY_ID'), aws_secret_access_key=os.environ.get('AWS_SECRET_KEY'))
 
 # temporary security credentials will lasts for 36 hours (3 days)
 TOKEN_SESSION_DURATION = 129600
@@ -99,6 +102,33 @@ def get_map_markers():
   with open('map_markers.json') as json_file:
     json_data = json.load(json_file)
     return jsonify(**json_data)
+
+@application.route('/announcements', methods=['GET'])
+def get_announcements():
+  result = mongo.db.announcements.find()
+  return str(json.dumps({'announcements':list(result)}, default=json_util.default)), 200
+
+@application.route('/announcements', methods=['POST'])
+def post_announcement():
+  title = request.form.get('title')
+  message = request.form.get('message')
+  if not title or not message:
+    return 'required elements not present', 400
+
+  timestamp = datetime.now().strftime("%a %h %d %H:%M:%S")
+
+  announcement = {'Subject': title, 'Message': message, 'Timestamp': timestamp}
+  mongo.db.announcements.insert(announcement)
+
+  json_string = json.dumps({'GCM': json.dumps({'data': {'title': title, 'message': message, 'timestamp': timestamp}}, ensure_ascii=False), 'APNS': json.dumps({'aps': {'alert': title + '|' + message}}, ensure_ascii=False), 'sqs': title + '|' + message}, ensure_ascii=False)
+  print json_string
+  print type(json_string)
+  _sns.publish(target_arn='arn:aws:sns:us-east-1:860000342007:VTHacksTopic',
+      message=json_string,
+      subject=title,
+      message_structure='json')
+
+  return 'success', 200
 
 @application.route('/groups', methods=['GET'])
 def get_groups():
