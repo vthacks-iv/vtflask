@@ -120,7 +120,7 @@ def post_announcement():
   announcement = {'Subject': title, 'Message': message, 'Timestamp': timestamp}
   mongo.db.announcements.insert(announcement)
 
-  json_string = json.dumps({'GCM': json.dumps({'data': {'title': title, 'message': message, 'timestamp': timestamp}}, ensure_ascii=False), 'APNS': json.dumps({'aps': {'alert': title + '|' + message}}, ensure_ascii=False), 'sqs': title + '|' + message, 'default': title + '|' + message}, ensure_ascii=False)
+  json_string = json.dumps({'GCM': json.dumps({'data': {'title': title, 'message': message, 'timestamp': timestamp}}, ensure_ascii=False), 'APNS': json.dumps({'aps': {'alert': message}}, ensure_ascii=False), 'sqs': title + '|' + message, 'default': title + '|' + message}, ensure_ascii=False)
   print json_string
   print type(json_string)
   _sns.publish(target_arn='arn:aws:sns:us-east-1:860000342007:VTHacksTopic',
