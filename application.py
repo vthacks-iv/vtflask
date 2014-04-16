@@ -5,7 +5,7 @@ import boto.sns
 import os
 import string
 import random
-import time
+from datetime import datetime
 
 from flask import jsonify, Response, request
 from flask.ext.pymongo import PyMongo
@@ -115,7 +115,8 @@ def post_announcement():
   if not title or not message:
     return 'required elements not present', 400
 
-  timestamp = time.time()
+  delta = datetime.now() - datetime.utcfromtimestamp(0)
+  timestamp = int(delta.total_seconds() * 1000)
 
   announcement = {'Subject': title, 'Message': message, 'Timestamp': timestamp}
   mongo.db.announcements.insert(announcement)
