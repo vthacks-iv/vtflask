@@ -103,6 +103,10 @@ def get_map_markers():
     json_data = json.load(json_file)
     return jsonify(**json_data)
 
+@application.route("/submit_push", methods=['GET', 'POST'])
+def submit_push():
+  return 'post worked hello', 200
+
 @application.route('/announcements', methods=['GET'])
 def get_announcements():
   result = mongo.db.announcements.find()
