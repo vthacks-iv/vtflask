@@ -49,7 +49,7 @@ mongo = PyMongo(application)
 bcrypt = Bcrypt(application)
 
 def check_auth(username, password):
-  return username == 'admin' and password == ''
+  return username == 'vthacker' and password == 'stickyRice'
 
 def authenticate():
   return Response('Could not verify your access level for that URL.\n'
