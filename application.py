@@ -70,11 +70,6 @@ def requires_auth(f):
 def hello_world():
     return "Hello! This is the VTHacks server."
 
-@application.route('/hi')
-@requires_auth
-def hi_world():
-    return "Hi! This is the VTHacks server."
-
 '''
 Returns temporary security credentials as defined in VT_SNS_POLICY lasting for
 TOKEN_SESSION_DURATION. Token session identified with provided <name> argument.
