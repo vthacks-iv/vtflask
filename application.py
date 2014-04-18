@@ -6,6 +6,7 @@ import os
 import string
 import random
 from datetime import datetime
+from functools import wraps
 
 from flask import jsonify, Response, request
 from flask.ext.pymongo import PyMongo
@@ -47,10 +48,32 @@ mongo = PyMongo(application)
 # Get Bcrypt client
 bcrypt = Bcrypt(application)
 
+def check_auth(username, password):
+  return username == 'admin' and password == ''
+
+def authenticate():
+  return Response('Could not verify your access level for that URL.\n'
+  'You have to login with proper credentials', 401,
+  {'WWW-Authenticate': 'Basic realm="Login Required"'})
+
+def requires_auth(f):
+  @wraps(f)
+  def decorated(*args, **kwargs):
+    auth = request.authorization
+    if not auth or not check_auth(auth.username, auth.password):
+      return authenticate()
+    return f(*args, **kwargs)
+  return decorated
 
 @application.route('/')
+@requires_auth
 def hello_world():
     return "Hello! This is the VTHacks server."
+
+@application.route('/hi')
+@requires_auth
+def hi_world():
+    return "Hi! This is the VTHacks server."
 
 '''
 Returns temporary security credentials as defined in VT_SNS_POLICY lasting for
