@@ -8,7 +8,7 @@ import random
 from datetime import datetime
 from functools import wraps
 
-from flask import jsonify, Response, request
+from flask import jsonify, Response, request, render_template
 from flask.ext.pymongo import PyMongo
 from bson import json_util
 from bson.objectid import ObjectId
