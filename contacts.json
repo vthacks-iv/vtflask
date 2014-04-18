@@ -268,6 +268,26 @@
             ]
         },
         {
+          "name": "Intergraph",
+          "contacts": [
+            {
+              "name": "Tatiana",
+              "skills": ["C++", "C#", "VB6", "Math"],
+              "email": "zorae42@gmail.com"
+            },
+            {
+              "name": "Mike Beynon",
+              "skills": ["User interface", "Usability", "Quality assurance", "Engineering"],
+              "email": "michael.beynon@intergraph.com"
+            },
+            {
+              "name": "Yann"
+              "skills": ["C++", "C#", "SQL", "VB.net", "VB6", "FORTRAN", "3D Graphics", "Physics"],
+              "email": "ylimon@ingr.com"
+            }
+          ]
+        },
+        {
             "name": "Lookout, Inc.",
             "contacts": [
                 {
