@@ -126,7 +126,6 @@
                         "CSS3",
                         "Sass",
                         "Less",
-                        "Less",
                         "Twitter Bootstrap",
                         "Susy",
                         "HTML5"
@@ -142,6 +141,23 @@
                         "JavaScript"
                     ],
                     "email": "dhensgen@customink.com"
+                }
+            ]
+        },
+        {
+            "name": "Epic",
+            "contacts": [
+                {
+                    "name": "Nate Andre",
+                    "skills": [
+                        "C",
+                        "C++",
+                        "Javascript",
+                        "HTML5",
+                        "PHP",
+                        "VB6"
+                    ],
+                    "email": "nandre@epic.com"
                 }
             ]
         },
@@ -238,6 +254,16 @@
                         "IBM Worklight"
                     ],
                     "email": "jgarciar@vt.edu"
+                },
+                {
+                    "name": "Faizaan Hashmi",
+                    "skills": [
+                        "Requirements gathering",
+                        "User interfaces",
+                        "Testing",
+                        "Product development"
+                    ],
+                    "email": "faizaanhashmi@yahoo.com"
                 }
             ]
         },
@@ -296,10 +322,20 @@
                 {
                     "name": "Kaslin Fields",
                     "skills": [
-                        "Pearl",
+                        "Perl",
                         "Java"
                     ],
                     "email": "kaslin@netapp.com"
+                },
+                {
+                    "name": "Getnat Ejigu",
+                    "skills": [
+                        "C",
+                        "C++",
+                        "Perl",
+                        "Java"
+                    ],
+                    "email": "getnat@netapp.com"
                 }
             ]
         },
@@ -355,7 +391,7 @@
                 }
             ]
         },
-                {
+        {
             "name": "VT ECE",
             "contacts": [
                 {
