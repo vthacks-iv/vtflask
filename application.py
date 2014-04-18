@@ -126,15 +126,10 @@ def get_map_markers():
     json_data = json.load(json_file)
     return jsonify(**json_data)
 
-@application.route("/submit_push", methods=['POST'])
-@requires_auth
-def submit_push():
-  return 'post worked hello', 200
-
 @application.route("/push_form", methods=['GET'])
 @requires_auth
 def push_form():
-  render_template('index.html')
+  return render_template('/index.html')
 
 @application.route('/announcements', methods=['GET'])
 def get_announcements():
@@ -142,6 +137,7 @@ def get_announcements():
   return str(json.dumps({'announcements':list(result)}, default=json_util.default)), 200
 
 @application.route('/announcements', methods=['POST'])
+@requires_auth
 def post_announcement():
   title = request.form.get('title')
   message = request.form.get('message')
