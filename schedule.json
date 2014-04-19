@@ -58,14 +58,14 @@
             "title": "Lunch"
         },
         {
-            "timestamp": "2:30 PM",
-            "description": "Come listen to TORC Robotic's Tech Talk",
-            "title": "TORC Robotics Tech talk"
-        },
-        {
             "timestamp": "3:00 PM",
             "description": "Come listen to Bloomberg's Tech talk",
             "title": "Bloomberg Tech talk"
+        },
+        {
+            "timestamp": "3:30 PM",
+            "description": "Come listen to TORC Robotic's Tech Talk",
+            "title": "TORC Robotics Tech talk"
         },
         {
             "timestamp": "4:00 PM",
