@@ -53,11 +53,6 @@
             "title": "Breakfast"
         },
         {
-            "timestamp": "9:00 AM",
-            "description": "Salesforce will be hosting a Tech talk.",
-            "title": "Salesforce Tech talk"
-        },
-        {
             "timestamp": "10:00 AM",
             "description": "Rackspace will be hosting a tech talk.",
             "title": "Rackspace Tech talk"
@@ -76,6 +71,11 @@
             "timestamp": "3:00 PM",
             "description": "Come listen to Bloomberg's Tech talk",
             "title": "Bloomberg Tech talk"
+        },
+        {
+            "timestamp": "4:00 PM",
+            "description": "Salesforce will be hosting a Tech talk.",
+            "title": "Salesforce Tech talk"
         },
         {
             "timestamp": "6:00 PM",
