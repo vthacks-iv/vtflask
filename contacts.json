@@ -412,6 +412,26 @@
             ]
         },
         {
+            "name": "TORC Robotics",
+            "contacts": [
+                {
+                    "name": "Aaron Dalton",
+                    "skills": [
+                        "C",
+                        "C++",
+                        "Embedded systems",
+                        "LabView",
+                        "Robotics",
+                        "Robotic systems",
+                        "Robotic sensor integration",
+                        "low level networking"
+                    ],
+                    "email": "dalton@torcrobotics.com",
+                    "twitter": "discretespace"
+                }
+            ]
+        },
+        {
             "name": "VT ECE",
             "contacts": [
                 {

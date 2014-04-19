@@ -48,11 +48,6 @@
             "title": "InterGraph Tech talk"
         },
         {
-            "timestamp": "1:00 AM",
-            "description": "Salesforce will be hosting a Tech talk.",
-            "title": "Salesforce Tech talk"
-        },
-        {
             "timestamp": "2:00 AM",
             "description": "Take a break and enjoy a Nerf War!",
             "title": "Nerf War"
@@ -61,6 +56,11 @@
             "timestamp": "7:00 AM",
             "description": "Breakfast will now be served.",
             "title": "Breakfast"
+        },
+        {
+            "timestamp": "9:00 AM",
+            "description": "Salesforce will be hosting a Tech talk.",
+            "title": "Salesforce Tech talk"
         },
         {
             "timestamp": "10:00 AM",

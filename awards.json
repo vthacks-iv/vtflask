@@ -69,6 +69,20 @@
             "prize": "$250, $100",
             "description": "1st place gets $250. 2nd place gets $100. Fitnet, fit.net, is a mobile fitness app. The app must include a scheduler and alerts. Most creative app which incorporates multiple motivators wins the prize.",
             "title": "App that commits users to workout days"
+        },
+        {
+            "url": "",
+            "company": "CapTech",
+            "prize": "Chromecast",
+            "title": "Most Scalable Application",
+            "description": "CapTech will be giving away Chromecasts to each member of the team to create the most scalable application."
+        },
+        {
+            "url": "",
+            "company": "Rackspace",
+            "prize": "Startup program membership",
+            "title": "Best Execution",
+            "description": "You are busy building an amazing startup, new app, or world changing technology. It's what you love. Let our experts focus on your cloud infrastructure. It's what we love. rackspacestartups.com"
         }
     ]
 }
