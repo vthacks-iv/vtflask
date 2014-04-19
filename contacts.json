@@ -282,7 +282,16 @@
             },
             {
               "name": "Yann",
-              "skills": ["C++", "C#", "SQL", "VB.net", "VB6", "FORTRAN", "3D Graphics", "Physics"],
+              "skills": [
+                  "C++",
+                  "C#",
+                  "SQL",
+                  "VB.net",
+                  "VB6",
+                  "FORTRAN",
+                  "3D Graphics",
+                  "Physics"
+              ],
               "email": "ylimon@ingr.com"
             }
           ]
