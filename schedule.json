@@ -58,11 +58,6 @@
             "title": "Lunch"
         },
         {
-            "timestamp": "2:00 PM",
-            "description": "Rackspace will be hosting a tech talk.",
-            "title": "Rackspace Tech talk"
-        },
-        {
             "timestamp": "2:30 PM",
             "description": "Come listen to TORC Robotic's Tech Talk",
             "title": "TORC Robotics Tech talk"
@@ -78,7 +73,12 @@
             "title": "Salesforce Tech talk"
         },
         {
-            "timestamp": "6:00 PM",
+            "timestamp": "5:00 PM",
+            "description": "Rackspace will be hosting a tech talk.",
+            "title": "Rackspace Tech talk"
+        },
+        {
+            "timestamp": "6:30 PM",
             "description": "Dinner will now be served",
             "title": "Dinner"
         },
