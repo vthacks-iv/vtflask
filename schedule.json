@@ -53,14 +53,14 @@
             "title": "Breakfast"
         },
         {
-            "timestamp": "10:00 AM",
-            "description": "Rackspace will be hosting a tech talk.",
-            "title": "Rackspace Tech talk"
-        },
-        {
             "timestamp": "1:00 PM",
             "description": "You can now grab some lunch.",
             "title": "Lunch"
+        },
+        {
+            "timestamp": "2:00 PM",
+            "description": "Rackspace will be hosting a tech talk.",
+            "title": "Rackspace Tech talk"
         },
         {
             "timestamp": "2:30 PM",
