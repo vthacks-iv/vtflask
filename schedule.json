@@ -91,6 +91,11 @@
             "timestamp": "8:30 PM",
             "description": "Microsoft will be hosting a tech talk.",
             "title": "Microsoft Tech talk"
+        },
+        {
+            "timestamp": "10:00 PM",
+            "description": "Find eggs that are hidden across the facility (except Bowman Room) for a chance to win a hoodie or a shot glass!",
+            "title": "Egg Hunt"
         }
     ],
     "Sunday": [
