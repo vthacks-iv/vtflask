@@ -421,6 +421,18 @@
             ]
         },
         {
+            "name": "Simon Computing",
+            "contacts": [
+		{
+                    "name": "Simon Woo",
+                    "skills": [
+                        "Java JEE", "Web Development"
+                    ],
+                    "phone": "7039699658"
+                }
+		]
+        },
+        {
             "name": "TORC Robotics",
             "contacts": [
                 {

@@ -29,11 +29,6 @@
             "timestamp": "9:30 PM",
             "description": "CapTech will be hosting a Tech talk.",
             "title": "CapTech Tech talk"
-        },
-        {
-            "timestamp": "10:00 PM",
-            "description": "Tech Pad will be giving a Tech talk.",
-            "title": "Tech Pad Tech talk"
         }
     ],
     "Saturday": [
@@ -58,24 +53,9 @@
             "title": "Breakfast"
         },
         {
-            "timestamp": "9:00 AM",
-            "description": "Salesforce will be hosting a Tech talk.",
-            "title": "Salesforce Tech talk"
-        },
-        {
-            "timestamp": "10:00 AM",
-            "description": "Rackspace will be hosting a tech talk.",
-            "title": "Rackspace Tech talk"
-        },
-        {
             "timestamp": "1:00 PM",
             "description": "You can now grab some lunch.",
             "title": "Lunch"
-        },
-        {
-            "timestamp": "2:30 PM",
-            "description": "Come listen to TORC Robotic's Tech Talk",
-            "title": "TORC Robotics Tech talk"
         },
         {
             "timestamp": "3:00 PM",
@@ -83,7 +63,27 @@
             "title": "Bloomberg Tech talk"
         },
         {
+            "timestamp": "3:30 PM",
+            "description": "Come listen to TORC Robotic's Tech Talk",
+            "title": "TORC Robotics Tech talk"
+        },
+        {
+            "timestamp": "4:00 PM",
+            "description": "Salesforce will be hosting a Tech talk.",
+            "title": "Salesforce Tech talk"
+        },
+        {
+            "timestamp": "5:00 PM",
+            "description": "Come see how easy it is to deploy your app to the Rackspace Cloud. This is a hands on walkthrough, so bring your laptops! We'll have free cloud credit and domain registration, plus some giveaways.",
+            "title": "Rackspace: Deploy/Secure/Scale"
+        },
+        {
             "timestamp": "6:00 PM",
+            "description": "Top secret project will be shown by the Fitnet booth.",
+            "title": "TOP SECRET"
+        },
+        {
+            "timestamp": "6:30 PM",
             "description": "Dinner will now be served",
             "title": "Dinner"
         },
@@ -91,6 +91,11 @@
             "timestamp": "8:30 PM",
             "description": "Microsoft will be hosting a tech talk.",
             "title": "Microsoft Tech talk"
+        },
+        {
+            "timestamp": "10:00 PM",
+            "description": "Find eggs that are hidden across the facility (except Bowman Room) for a chance to win a hoodie or a shot glass!",
+            "title": "Egg Hunt"
         }
     ],
     "Sunday": [
