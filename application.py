@@ -128,7 +128,7 @@ def push_form():
 
 @application.route('/announcements', methods=['GET'])
 def get_announcements():
-  result = mongo.db.announcements.find().sort("Timestamp", -1)
+  result = mongo.db.announcements.find().sort("Timestamp", 1)
   return str(json.dumps({'announcements':list(result)}, default=json_util.default)), 200
 
 @application.route('/announcements', methods=['POST'])
