@@ -128,7 +128,7 @@ def push_form():
 
 @application.route('/announcements', methods=['GET'])
 def get_announcements():
-  result = mongo.db.announcements.find()
+  result = mongo.db.announcements.find().sort("Timestamp", -1)
   return str(json.dumps({'announcements':list(result)}, default=json_util.default)), 200
 
 @application.route('/announcements', methods=['POST'])
@@ -143,7 +143,6 @@ def post_announcement():
   timestamp = int(delta.total_seconds() * 1000)
 
   announcement = {'Subject': title, 'Message': message, 'Timestamp': timestamp}
-  mongo.db.announcements.insert(announcement)
 
   json_string = json.dumps({'GCM': json.dumps({'data': {'title': title, 'message': message, 'timestamp': timestamp}}, ensure_ascii=False), 'APNS': json.dumps({'aps': {'alert': title + '|' + message}}, ensure_ascii=False), 'sqs': title + '|' + message, 'default': title + '|' + message}, ensure_ascii=False)
 
@@ -151,6 +150,8 @@ def post_announcement():
       message=json_string,
       subject=title,
       message_structure='json')
+
+  mongo.db.announcements.insert(announcement)
 
   return 'success', 200
 
