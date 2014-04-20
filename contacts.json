@@ -399,6 +399,14 @@
                     ],
                     "email": "samuel.toriel@rackspace.com",
                     "twitter": "@rilt"
+                },
+		{
+                    "name": "Zach Lytle",
+                    "skills": [
+                        "Rackspace Cloud Products"
+                    ],
+                    "email": "samuel.toriel@rackspace.com",
+                    "twitter": "@zacklytle"
                 }
             ]
         },
